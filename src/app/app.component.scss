@@ -6,3 +6,7 @@ canvas {
   background: #747bb1;
   float: left;
 }
+
+canvas.is-dragging {
+  cursor: grabbing;
+}
