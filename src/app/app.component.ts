@@ -81,6 +81,10 @@ export class AppComponent implements OnInit {
     this.zoomLevel += zoomDirection;
     this.cameraZoom = Math.pow(ZOOM_FACTOR, this.zoomLevel);
 
+    const zoomDelta = Math.pow(ZOOM_FACTOR, zoomDirection);
+    this.cameraOffset.x = Math.floor(event.clientX - (event.clientX - this.cameraOffset.x) * zoomDelta);
+    this.cameraOffset.y = Math.floor(event.clientY - (event.clientY - this.cameraOffset.y) * zoomDelta);
+
     this.draw();
   }
 }
